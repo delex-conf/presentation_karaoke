@@ -43,7 +43,6 @@
 	<script type="text/javascript" src="config/config.js"></script>
 	<script type="text/javascript" src="config/topics.js"></script>
 	<script type="text/javascript" src="config/slides.js"></script>
-	<script type="text/javascript" src="js/translations.js"></script>
 	<script type="text/javascript" src="js/karaoke.js"></script>
 
 </head>
@@ -52,17 +51,19 @@
 
 <div class="container" id="choose_group">
 	<div class="row">
+		<h1 style="font-size: 7vh;text-align: center;">
+			Welcome to Delex 2020 Karaoke Epic Battle!
+		</h1>
+	</div>
+	<div class="row">
 		<div class="col-sm-6">
-			<h3 style="font-size: 5vh;">Subject Area</h3>
-			<div id="groups" class="groups well">
-
-			</div>
+			<h3 style="font-size: 5vh;">Speakers</h3>
+			<ul id="speakers" class="speakers well list-unstyled"></ul>
 		</div>
 		<div class="col-sm-6">
 			<h3 style="font-size: 5vh;">Possible topics</h3>
 			<div class="div_topics well">
-				<ul id="topics" class="topics list-unstyled">
-				</ul>
+				<ul id="topics" class="topics list-unstyled"></ul>
 			</div>
 		</div>
 	</div>
@@ -73,15 +74,27 @@
 	</div>
 </div>
 
+<div class="container" id="show_vs_speakers">
+	<button onclick="shuffle_speakers();restart()" class="btn btn-default btn-back">Back & Shuffle speakers</button>
+		<div class="row" style="height:60vh">
+		<div class="col-sm-12">
+			<h3 style="font-size: 10vh;">Speakers:</h3>
+			<div style="font-size: 30vh; white-space:nowrap;" id="vs_speakers"></div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-12">
+			<input type="button" id="next" name="next" value="Next" class="btn btn-success" />
+		</div>
+	</div>
+</div>
+
 <div class="container" id="choose_topic">
 	<button onclick="restart()" class="btn btn-default btn-back">Back</button>
-
 	<div class="row" style="height:60vh">
 		<div class="col-sm-12">
-
 			<h3 style="font-size: 10vh;">Your topic is</h3>
 			<div style="font-size: 30vh; white-space:nowrap;" id="your_topic"></div>
-
 		</div>
 	</div>
 	<div class="row">
@@ -94,11 +107,26 @@
 	</div>
 </div>
 
-<div class="container message" id="count_down">
+<div class="container message" id="count_down"></div>
+
+<div class="container" id="thank_you">
+	<button onclick="restart()" class="btn btn-default btn-back">Back</button>
+	<div class="row" style="height:60vh">
+		<div class="col-sm-12">
+			<h3 style="font-size: 30vh; white-space:nowrap; text-align:center;">Thank you!</h3>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-6">
+			<input type="button" id="first_win" name="first_win" value="" class="btn btn-default btn-lg btn-block responsive-width" />
+		</div>
+		<div class="col-sm-6">
+			<input type="button" id="second_win" name="second_win" value="" class="btn btn-default btn-lg btn-block responsive-width" />
+		</div>
+	</div>
 </div>
-<div class="container message" id="thank_you">
-	Thank you!
-</div>
+
+<div class="container winner-message" style="padding-top: 0vh;" id="winner"></div>
 
 <!--Time Bar-->
 <div id="progress-back" class="load-item">
@@ -108,10 +136,8 @@
 <!--Control Bar-->
 <div id="controls-wrapper" class="load-item">
 	<div id="controls">
-
 		<!--Slide captions displayed here-->
 		<div id="slidecaption"></div>
-
 	</div>
 </div>
 
