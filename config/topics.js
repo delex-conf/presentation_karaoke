@@ -1,6 +1,5 @@
 // change this if you want to change the default list of topics
-var topics = {
-	'Delex 2019' : [
+var topics = [
 		"Avaliablility 99.9999999",
 		"Testing framework architecture",
 		"Can not reproduce",
@@ -32,5 +31,4 @@ var topics = {
 		"Automated Testing",
 		"NoSQL vs SQL",
 		"Open source"
-	]
-};
+];

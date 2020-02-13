@@ -58,8 +58,7 @@ body {
 }
 
 h1 {
-    font-weight: 900;
-    color:       black;
+    color: #01a3b2;
 }
 
 h2 {
@@ -90,19 +89,21 @@ h3 {
     text-align:  center;
 }
 
+.winner-message {
+    font-size:   20vh;
+    padding-top: 20vh;
+    text-align:  center;
+}
+
 textarea {
     white-space: nowrap;
 }
 
-.groups {
+.speakers {
     font-size: 3em;
 }
 
-.groups input[type="radio"] {
-    display: none;
-}
-
-.groups label {
+.speakers label {
     font-weight:   normal;
     color:         #666666;
     width:         100%;
@@ -110,9 +111,11 @@ textarea {
     border-radius: 4px;
 }
 
-.groups input[type="radio"]:checked + label {
-    color:            #333333;
-    background-color: #dddddd;
+.speakers li {
+    padding:      .2em 0;
+    padding-left: 1em;
+    text-indent:  -1em;
+    line-height:  1em;
 }
 
 .div_topics {
@@ -146,4 +149,8 @@ textarea {
     left:      10px;
     top:       10px;
     width:     auto;
+}
+
+.responsive-width {
+    font-size: 3vw;
 }
